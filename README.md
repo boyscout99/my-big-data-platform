@@ -1,4 +1,4 @@
-# My Big Data Platform Proof of Concept
+# My Big Data Platform, a Proof of Concept
 
 This repository provides a design for a big data platform used for network data processing.
 
