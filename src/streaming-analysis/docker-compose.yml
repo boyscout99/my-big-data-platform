@@ -1,0 +1,68 @@
+version: '2'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    ports:
+      - 2181
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      #ZOOKEEPER_SERVERS: localhost:22888:23888;localhost:32888:33888;localhost:42888:43888
+    #network_mode: host
+    #extra_hosts:
+    #  - "moby:127.0.0.1"
+
+  
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    ports:
+      - 29092:29092
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092, CONNECTION_FROM_HOST://localhost:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT, CONNECTION_FROM_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      
+  spark:
+    image: bitnami/spark:latest
+    #volumes:
+    #   - ./apps:/opt/spark-apps
+    #   - ./data:/opt/spark-data
+    environment:
+      - SPARK_MODE=master
+    expose:
+      - '7077'
+    ports:
+      - '8080:8080'
+      
+  spark-worker:
+    image: bitnami/spark:latest
+    depends_on:
+      - spark
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://spark:7077
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_WORKER_CORES=1
+      
+  stream-processor:
+    build: ./SparkProcessor
+    #depends_on:
+      #- zookeeper-1
+      #- zookeeper-2
+      #- kafka-1
+      #- kafka-2
+    environment:
+      #- MASTER=spark://spark:7077
+      - MASTER=local[*]
+    volumes:
+      - "./SparkProcessor/:/spark-processor/"
+    entrypoint: ["bash", "start_spark.sh"]
+    command: ["spark_processor.py"]
