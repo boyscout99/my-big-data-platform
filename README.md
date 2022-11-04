@@ -10,4 +10,7 @@ Python
 - to write most of the code
 - libraries like pandas, 
 
+Docker containers
+- dockercompose files for
+- 
 The project includes Python, Docker, Apache Cassandra, Apache Spark, Apache Kafka
