@@ -1,4 +1,4 @@
-# My Big Data Platform, a Proof of Concept
+# My Big Data Platform, a Proof of Concept (work in progress)
 
 This repository provides a design for a big data platform used for network data processing.
 
@@ -14,3 +14,12 @@ Docker containers
 - dockercompose files for
 - 
 The project includes Python, Docker, Apache Cassandra, Apache Spark, Apache Kafka, Zookeeper.
+
+## The structure
+Picture of the design.
+
+And brief explanation.
+
+## How to navigate the folders
+
+Links to other folders.
