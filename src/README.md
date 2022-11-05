@@ -1,6 +1,4 @@
-# Running the code described in the Report
-
-> NOTE! For testing purposes there is only one Zookeeper and one Kafka broker, in production replicate both as clisters of at least three nodes.
+# How to run the code
 
 ## Part 1 - The ingestion with the ingest manager
 
