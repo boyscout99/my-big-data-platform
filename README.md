@@ -23,6 +23,7 @@ And brief explanation.
 ## How to navigate the folders
 
 Links to other folders.
+Inside [src]()
 ```
 streaming-analysis
     ├── docker-compose.yml
@@ -33,5 +34,5 @@ streaming-analysis
     │   ├── requirements.txt
     │   ├── spark_processor.py
     │   └── start_spark.sh
-    └── unproc-data-client-1.csv
+
 ```
