@@ -26,3 +26,13 @@ cassandra-driver version: 3.25.0
 ## Using Cassandra as a Docker container
 
 **mysimbdp-coredms** is implemented as a cluster of Cassandra two Docker containers: _code_cassandra1_1_ and _code_cassandra2_1_. To create the cluster refer to the /code folder in the repository.
+
+## How to work with virtual environment
+**MacOS/Linux - Method 1**
+```
+sudo apt-get install python3-venv
+cd project-vaccine-distribution             # Move to the project root folder
+python3 -m venv venv                        # Create a virtual environment 
+source venv/bin/activate                    # Activate the virtual environment
+(venv) $                                    # You see the name of the virtual environment in the parenthesis.
+```
