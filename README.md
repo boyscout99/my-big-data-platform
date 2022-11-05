@@ -31,7 +31,7 @@ Docker containers
 - for Zookeeper nodes
 - for a cluster of Apache Cassandra nodes
 - for Apache Spark workers and master node
-- for the Apache Spark Streaming processor
+- for the Apache Spark Streaming processor image because the JVM version of my machine was not the one I needed
 
 ## The structure
 Picture of the design.
