@@ -6,14 +6,32 @@ It is the result of my design and programming assignments for the course Big Dat
 which I followed at Aalto University during the Spring of 2021.
 
 ## What I used for this project
+
+Apache Cassandra
+ - for 
+ 
+Apache Spark
+ - for stream processing in near real-time
+ - uses Spark Streaming for batch processing
+ - uses Hadoop as scheduler
+ 
+Apache Kafka
+ - for 
+ 
+Zookeeper
+ - used to orchestrate Kafka brokers
+ - brokers send metadata about them and their topics to Zookeeper nodes
+ 
 Python
 - to write most of the code
-- libraries like pandas, 
+- libraries like cassandra.cluser, kafka, pyspark, csv, json
 
 Docker containers
-- dockercompose files for
-- 
-The project includes Python, Docker, Apache Cassandra, Apache Spark, Apache Kafka, Zookeeper.
+- for Kafka brokers
+- for Zookeeper nodes
+- for a cluster of Apache Cassandra nodes
+- for Apache Spark workers and master node
+- for the Apache Spark Streaming processor
 
 ## The structure
 Picture of the design.
