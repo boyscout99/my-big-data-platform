@@ -23,6 +23,7 @@ And brief explanation.
 ## How to navigate the folders
 
 Links to other folders.
+```
 streaming-analysis
     ├── docker-compose.yml
     ├── kafka_consumer.py
@@ -33,3 +34,4 @@ streaming-analysis
     │   ├── spark_processor.py
     │   └── start_spark.sh
     └── unproc-data-client-1.csv
+```
