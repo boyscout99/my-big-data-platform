@@ -13,4 +13,4 @@ Python
 Docker containers
 - dockercompose files for
 - 
-The project includes Python, Docker, Apache Cassandra, Apache Spark, Apache Kafka
+The project includes Python, Docker, Apache Cassandra, Apache Spark, Apache Kafka, Zookeeper.
