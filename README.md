@@ -11,12 +11,13 @@ Apache Cassandra
  - for 
  
 Apache Spark
- - for stream processing in near real-time
- - uses Spark Streaming for batch processing
+ - for stream processing in near real-time with Spark Streaming libraries
+ - used with Resiliend Distributed Datasets (RRD), Spark's low-level API
  - uses Hadoop as scheduler
  
 Apache Kafka
- - for 
+ - to send messages from the data source (client data) to the processor (Spark)
+ - messages are published on different topics and are consumed by different agents
  
 Zookeeper
  - used to orchestrate Kafka brokers
@@ -25,13 +26,15 @@ Zookeeper
 Python
 - to write most of the code
 - libraries like cassandra.cluser, kafka, pyspark, csv, json
+- programs to simulate: 
+  - Kafka producer and consumer
 
 Docker containers
 - for Kafka brokers
 - for Zookeeper nodes
 - for a cluster of Apache Cassandra nodes
 - for Apache Spark workers and master node
-- for the Apache Spark Streaming processor image because the JVM version of my machine was not the one I needed
+- for the Apache Spark Streaming driver process, an image with the Python code to process the stream
 
 ## The structure
 Picture of the design.
