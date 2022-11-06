@@ -26,8 +26,9 @@ Zookeeper
 Python
 - to write most of the code
 - libraries like cassandra.cluser, kafka, pyspark, csv, json
-- programs to simulate: 
-  - Kafka producer and consumer
+- programs used for
+  - in the data ingestion part: an app ingesting a csv file in the Cassandra distributed database
+  - in the straming analysis part: Kafka producer and consumer, analyze the message stream received by Kafka brokers
 
 Docker containers
 - for Kafka brokers
