@@ -8,7 +8,8 @@ which I followed at Aalto University during the Spring of 2021.
 ## What I used for this project ##
 
 **Apache Cassandra**
- - for 
+ - for data storage
+ - it is a distributed NoSQL database implemented as a cluster of nodes preventing a single point of failure
  
 **Apache Spark**
  - for stream processing in near real-time with Spark Streaming libraries
