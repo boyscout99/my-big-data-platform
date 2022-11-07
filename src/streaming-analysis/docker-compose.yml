@@ -31,7 +31,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       
   spark:
-    image: bitnami/spark:latest
+    image: bitnami/spark:2.4.6
     #volumes:
     #   - ./apps:/opt/spark-apps
     #   - ./data:/opt/spark-data
@@ -43,7 +43,7 @@ services:
       - '8080:8080'
       
   spark-worker:
-    image: bitnami/spark:latest
+    image: bitnami/spark:2.4.6
     depends_on:
       - spark
     environment:
@@ -60,8 +60,8 @@ services:
       #- kafka-1
       #- kafka-2
     environment:
-      #- MASTER=spark://spark:7077
-      - MASTER=local[*]
+      - MASTER=spark://spark:7077
+      #- MASTER=local[*]
     volumes:
       - "./SparkProcessor/:/spark-processor/"
     entrypoint: ["bash", "start_spark.sh"]
