@@ -20,4 +20,4 @@
 2. Start the Kafka producer with `python3 kafka_producer.py`
 3. Start the streaming application **tenantstreamapp** with `docker-compose up stream-processor`, which will call the service `spark_processor.py` in the folder /SparkProcessor
 4. Then start the Kafka consumer with `python3 kafka_consumer.py` which will receive the analyzed stream in real-time.
-5. The Spark UI can be accessed at the address of the stream-processor container at port 4040. Check its IP with `docker network inspect stream-processing`
+5. The Spark UI can be accessed at the address of the stream-processor container at port 4040. Check its IP with `docker network inspect stream-processing` -> most importantly: PySpark and the Spark image have to be of the same version, in this case 2.4.6
