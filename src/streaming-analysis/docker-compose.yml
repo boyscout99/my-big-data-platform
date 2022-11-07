@@ -14,8 +14,7 @@ services:
     #network_mode: host
     #extra_hosts:
     #  - "moby:127.0.0.1"
-
-  
+    
   kafka:
     image: confluentinc/cp-kafka:latest
     ports:
@@ -61,7 +60,6 @@ services:
       #- kafka-2
     environment:
       - MASTER=spark://spark:7077
-      #- MASTER=local[*]
     volumes:
       - "./SparkProcessor/:/spark-processor/"
     entrypoint: ["bash", "start_spark.sh"]
