@@ -1,4 +1,4 @@
-# My Big Data Platform, a Proof of Concept (work in progress) #
+# My Big Data Platform, a Proof of Concept #
 
 This repository provides a design for a big data platform used for network data processing.
 
@@ -39,9 +39,7 @@ which I followed at Aalto University during the Spring of 2021.
 - for the Apache Spark Streaming driver process, an image with the Python code to process the stream
 
 ## The structure
-Picture of the design.
-
-And brief explanation.
+![assignment3-architecture.png](assignment3-architecture.png)
 
 ## How to navigate the folders
 
