@@ -1,9 +1,9 @@
-# My Big Data Platform, a Proof of Concept #
+# My Big Data Platform for Network Data Processing with Apache Cassandra and Spark, a Proof of Concept #
 
-This repository provides a design for a big data platform used for network data processing.
+This repository provides a design for a multi-tenant big data platform used to process network data in real-time and in batches.
 
 It is the result of my design and programming assignments for the course Big Data Platforms, 
-which I followed at Aalto University during the Spring of 2021.
+which I followed at Aalto University during the Spring of 2022.
 
 ## What I used for this project ##
 
@@ -13,7 +13,7 @@ which I followed at Aalto University during the Spring of 2021.
  
 **Apache Spark**
  - for stream processing in near real-time with Spark Streaming libraries
- - used with Resiliend Distributed Datasets (RRD), Spark's low-level API
+ - used with Resilient Distributed Datasets (RRD), Spark's low-level API
  - uses Hadoop as scheduler
  
 **Apache Kafka**
@@ -43,17 +43,6 @@ which I followed at Aalto University during the Spring of 2021.
 
 ## How to navigate the folders
 
-Links to other folders.
-Inside [src]()
-```
-streaming-analysis
-    ├── docker-compose.yml
-    ├── kafka_consumer.py
-    ├── kafka_producer.py
-    ├── SparkProcessor
-    │   ├── Dockerfile
-    │   ├── requirements.txt
-    │   ├── spark_processor.py
-    │   └── start_spark.sh
-
-```
+Use the [Deployment Guide](https://github.com/boyscout99/my-big-data-platform/tree/main/deployment#deployment-guide) to deploy all components.
+Inside [src](src) you can find a guide on [How to run the code](https://github.com/boyscout99/my-big-data-platform/tree/main/src#how-to-run-the-code) for data ingestion and stream analysis.
+You can find the description of the dataset used [here](https://github.com/boyscout99/my-big-data-platform/tree/main/data#description-of-the-data-used-by-the-platform).
